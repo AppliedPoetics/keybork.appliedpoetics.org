@@ -1,0 +1,30 @@
+{
+	"template": "index.mustache",
+	"menu": [{
+      "logo":"",
+			"label": "Difficulty",
+			"options": [{
+				"entries": [{
+            "label":"Easy",
+            "target":"_blank"
+          },
+          {
+            "label":"Medium",
+            "target":"_blank"
+          },
+          {
+            "label":"Hard",
+            "target":"_blank"
+          },
+          {
+            "label":"Impossible",
+            "target":"_blank"
+          }]
+				}]
+    },
+		{
+			"label": "About",
+      "target":"_blank"
+		}
+	]
+}
