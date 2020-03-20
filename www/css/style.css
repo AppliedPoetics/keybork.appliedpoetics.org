@@ -73,8 +73,6 @@ label {
 #menu {
   float: left;
   width: 100%;
-  height: 3vw;
-  min-height: 3vw;
   font-family: t26-carbon, monospace;
   font-weight: 700;
   font-style: normal;
@@ -263,6 +261,10 @@ label {
   background: rgba(242,242,242, 1);
 }
 
+.modal-wrapper {
+  padding: 5%;
+}
+
 .modal-title {
   background: rgba(3,11,166, 1);
   border-color: rgba(242,242,242, 1);
@@ -273,4 +275,10 @@ label {
 
 .modal-text {
   padding: 5%;
+  text-justify: inter-word;
+}
+
+.modal-text p {
+  text-justify: inter-word;
+  text-align: justify;
 }

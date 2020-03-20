@@ -24,7 +24,7 @@
     },
 		{
 			"label": "About",
-      "target":"_blank"
+      "data-method":"about-modal"
 		}
 	]
 }
