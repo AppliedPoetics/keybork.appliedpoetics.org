@@ -32,6 +32,7 @@ a:hover {
 
 nav {
   height: 100%;
+  width: 100%;
 }
 
 body{
@@ -175,6 +176,10 @@ select {
   font-size: 13px;
   text-transform: uppercase;
   height: 100%;
+}
+
+.drop-btn:hover + .dropdown-content {
+  display: block;
 }
 
 .drop-btn img { 

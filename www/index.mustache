@@ -1,64 +1,70 @@
 <!DOCTYPE html>
   <head>
     <!-- BOOTSTRAP -->
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <!-- jQuery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <!-- Latest compiled JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <!-- jQuery library -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <!-- Latest compiled JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- BOOTSTRAP -->
     <!-- TYPEKIT -->
-        <script src="https://use.typekit.net/vwg0vgf.js"></script>
-        <script>try{Typekit.load({ async: true });}catch(e){}</script>
+      <script src="https://use.typekit.net/vwg0vgf.js"></script>
+      <script>try{Typekit.load({ async: true });}catch(e){}</script>
     <!-- TYPEKIT -->
     <!-- STYLESHEET -->
-        <link rel="stylesheet" href = "css/style.css">
+      <link rel="stylesheet" href = "css/style.css">
     <!-- STYLESHEET -->
     <!-- JAVASCRIPT -->
-        <script src = "js/ui-functions.js"></script>
-        <script src = "js/menu-functions.js"></script>
-        <script src = "js/line-numbers.js"></script>
-        <script src = "js/app-router.js"></script>
+      <script src = "js/ui-functions.js"></script>
+      <script src = "js/menu-functions.js"></script>
+      <script src = "js/line-numbers.js"></script>
+      <script src = "js/app-router.js"></script>
     <!-- JAVASCTIPT -->
     <!-- META -->
-    <title></title>
+      <title></title>
     <!-- META -->
   </head>
   <body>
-  <div id = "wrapper">
-    <div id = "menu">
-      <nav>
-        <div id = "option-container">
-          {{#menu}}
-            <div class = "dropdown" tabindex = "0" id = "options">
-              <button class="drop-btn" autocomplete="off" data-original-title="" title="">{{label}}</button>
-              {{#options}}
-                  <div class = "dropdown-content">
-                    {{#entries}}
-                      <a href = "#" data-method="{{label}}">{{label}}</a>
-                    {{/entries}}
-                  </div>
-              {{/options}}
-            </div>
-          {{/menu}}
+    <div id = "wrapper">
+      <div id = "menu">
+        <nav>
+          <div id = "option-container">
+            {{#menu}}
+              <div class = "dropdown" tabindex = "0" id = "options">
+                <button class="drop-btn" autocomplete="off" data-original-title="" title="">{{label}}</button>
+                {{#options}}
+                    <div class = "dropdown-content">
+                      {{#entries}}
+                        <a href = "#" data-method="{{label}}">{{label}}</a>
+                      {{/entries}}
+                    </div>
+                {{/options}}
+              </div>
+            {{/menu}}
+          </div>
+        </nav>
+        <div class = "dropdown" style = "right:0;">
+          <button class = "drop-btn" id = "diff">Difficulty</button>
         </div>
-      </nav>
-    </div>
-    <div id = "console">
-      <form>
-          <textarea name = "editContent" id = "editContent" rel = "popover"></textarea>
-      </form>
-      <script type="text/javascript">
-        createTextAreaWithLines('editContent');
-        $("#lineNumbers").prop("disabled", true);
-      </script>
-    </div>
-  </div>
-  <script>
-      $(window).resize(function() {
+      </div>
+      <div id = "console">
+        <form>
+            <textarea name = "editContent" id = "editContent" rel = "popover"></textarea>
+        </form>
+        <script type="text/javascript">
           createTextAreaWithLines('editContent');
-      });
-  </script>
+          $("#lineNumbers").prop("disabled", true);
+        </script>
+      </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+          // TODO: Make createTextAreaWithLines a proper function
+        });
+        $(window).resize(function() {
+            createTextAreaWithLines('editContent');
+        });
+    </script>
   </body>
 </html>

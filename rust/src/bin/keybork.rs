@@ -7,6 +7,7 @@ use std::env;
 
 #[derive(Serialize, Deserialize)]
 struct Response {
+  diff: String,
   letters: Vec<u8>,
   text: String,
 }
@@ -47,6 +48,7 @@ pub fn main()
     let factor = &args.args[0];
     let keys = avail_keys(factor.to_string());
     let response = Response {
+        diff: factor.to_owned(),
         letters: keys.to_owned(),
         text: "".to_owned()
       };

@@ -6,5 +6,6 @@ $(document).ready(function() {
       "text":$('#editContent').val()
     }
     $(json).transmit();
+    $(this).parent().hide();
   });
 });

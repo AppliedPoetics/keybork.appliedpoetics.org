@@ -6,13 +6,15 @@ $.fn.transmit = function() {
     data: this[0],
     dataType: 'text',
     success: function(data){
-        data = $.parseJSON(data);
-        $(document).keypress(function(key) {
-          var code = key.which;
-          if($.inArray(code,data.letters) !== -1) {
-            return false;
-          }
-        });
+      $(document).off('keypress');
+      data = $.parseJSON(data);
+      $(document).keypress(function(key) {
+        var code = key.which;
+        if($.inArray(code,data.letters) !== -1) {
+          return false;
+        }
+      });
+      $('#diff').text(data.diff);
     },
     error: function(xhr,ajaxOptions,thrownError){
         console.log(xhr.status + " " + xhr.responseText);

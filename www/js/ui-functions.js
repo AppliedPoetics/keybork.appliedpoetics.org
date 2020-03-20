@@ -9,4 +9,7 @@ $(document).ready(function(){
       $(this).css('background','rgba(242,242,242, 1)');
       $(this).css('color','rgba(34,2,0, 1)');
     });
+    $('.drop-btn').on('mouseenter',function() {
+      $(this).siblings('.dropdown-content').css('display','');
+    });
 });
