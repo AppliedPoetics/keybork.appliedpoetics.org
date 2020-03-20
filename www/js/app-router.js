@@ -18,15 +18,21 @@ $.fn.transmit = function() {
         $('#diff-status').text(data.diff);
       } else {
         $('#diff-level').append(
-          '<button id = "diff-status" class = "drop-btn">' + data.diff + '</button>',
+          '<button id = "diff-status" class = "drop-btn">' + data.diff + '</button>'
         );
-        $('#diff-status').on('click',function() {
-          // TODO: Create a modal?
-        });
       }
+      $('#diff-modal .modal-text').text('');
+      $(data.letters).each(function() {
+        var text = $('#diff-modal .modal-text').text();
+        $('#diff-modal .modal-text').text(text + ' ' + String.fromCharCode(this))
+      });
+      $('#diff-status').on('click',function() {
+        $('#diff-modal').show();
+        $('#diff-modal').focus();
+      });
     },
     error: function(xhr,ajaxOptions,thrownError){
-        console.log(xhr.status + " " + xhr.responseText);
+      console.log(xhr.status + " " + xhr.responseText);
     }
   });
 }

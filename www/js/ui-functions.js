@@ -12,4 +12,7 @@ $(document).ready(function(){
     $('.drop-btn').on('mouseenter',function() {
       $(this).siblings('.dropdown-content').css('display','');
     });
+    $('.modal-window').on('focusout',function() {
+        $(this).hide();
+    });
 });

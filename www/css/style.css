@@ -22,11 +22,10 @@ a:hover {
 *:focus { 
   outline: none; 
 }
-::selection {
+
+::selection, ::-moz-selection  {
   background: rgba(3,166,150, 1) !important;
-}
-::-moz-selection {
-  background: rgba(3,166,150, 1) !important;
+  color: rgba(255,255,255, 1);
 }
 
 nav {
@@ -233,55 +232,6 @@ label {
   color: #fff;
 }
 
-.popover {
-  color: #222;
-  width: 200px;
-}
-
-.popover-title {
-  color: #222;
-}
-
-.popover-content input[type="submit"], .form-button {
-  width: 100%;
-  background: #009F8F;
-  text-transform: uppercase;
-  border: none;
-  margin-top: 10px;
-  color: #fff;
-  font-family: 'proxima-nova';
-}
-
-.popover-content input[type="submit"]:focus {
-  background: #FFCC11;
-}
-
-.tool-explain {
-  font-family: 'proxima-nova';
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 8pt;
-  margin-top: 10px;
-}
-
-.popover-title {
-  font-family: 'proxima-nova';
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 8pt;
-}
-
-.popover.right { 
-  margin-left: 0px;
-}
-
-.styled-select {
-  overflow: hidden;
-  width: 168px;
-  background: url(/img/ap-select-arrow.png)
-  no-repeat right;
-}
-
 .textAreaWithLines{
   display:block;
   margin:0;
@@ -296,37 +246,31 @@ label {
   min-width: 40px;
 }
 
-.file-opts { 
-  color: #FFCC11;
-  font-weight: 700;
+.modal-window {
+  display: flex;
+  position: absolute;
+  margin: 0 25% 0 25%;
+  top: 50%;
+  display: none;
+  transform: translateY(-50%);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 50vw;
+  z-index: 1000000;
+  font-family: 'sax-mono', fixed width;
+  background: rgba(242,242,242, 1);
 }
 
-.normal-opts { 
-  font-weight: 400;
+.modal-title {
+  background: rgba(3,11,166, 1);
+  border-color: rgba(242,242,242, 1);
+  border-style: solid;
+  border-width: 3px;
+  color: rgba(255,255,255, 1);
 }
 
-.share {
-  font-family: 'proxima-nova';
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 8pt;
-  margin-top: 10px;
-  margin-top: 5px;
-}
-
-.share img {
-  height: 10px;
-  width: 10px;
-  margin-right: 10px;
-}
-
-.share a , .share a:visited{
-  text-decoration: none;
-  background: none;
-  color: #222;
-}
-
-.share a:hover {
-  background: #999;
-  color: #fff;
+.modal-text {
+  padding: 5%;
 }
