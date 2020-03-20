@@ -39,8 +39,9 @@ body{
 
 label {
   font-family: 'proxima-nova';
-  font-weight: 700; text-transform:
-  uppercase; font-size: 8pt;
+  font-weight: 700; 
+  text-transform: uppercase; 
+  font-size: 8pt;
 }
 
 #wrapper {
@@ -281,4 +282,10 @@ label {
 .modal-text p {
   text-justify: inter-word;
   text-align: justify;
+}
+
+@media only screen and (max-width: 768px) {
+  #menu {
+    min-height: 30vw;
+  }
 }

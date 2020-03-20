@@ -7,9 +7,9 @@ $.fn.transmit = function() {
     dataType: 'text',
     success: function(data){
       data = $.parseJSON(data);
-      $(document).off('keypress');
-      $(document).keypress(function(key) {
-        var code = key.which;
+      $(document).off('keydown');
+      $(document).on('keydown',function(key) {
+        var code = key.which || key.keyCode;
         if($.inArray(code,data.letters) !== -1) {
           return false;
         }

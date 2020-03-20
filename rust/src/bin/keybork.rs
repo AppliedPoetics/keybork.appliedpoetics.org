@@ -27,7 +27,7 @@ fn assess_difficulty(factor: String)
 fn avail_keys(factor: String)
   -> Vec<u8> {
     let diff = assess_difficulty(factor);
-    let mut keys: Vec<u8> = (65..126)
+    let mut keys: Vec<u8> = (0..255)
       .map(|n| n)
       .collect();
     let limit = (keys.len() as f32 * diff).floor();
