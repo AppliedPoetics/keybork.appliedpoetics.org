@@ -3,7 +3,6 @@ extern crate rand;
 
 use serde::{Serialize, Deserialize};
 use serde_json;
-use std::env;
 
 #[derive(Serialize, Deserialize)]
 struct Response {

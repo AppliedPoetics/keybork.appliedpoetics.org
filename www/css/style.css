@@ -1,7 +1,6 @@
 html, body{
   height: 100%;
   width: 100%;
-  /*background: rgba(2,34,34,1);*/
   background: rgba(3,11,166, 1);
   font-color: rgba(255,255,255,1);
 }
@@ -24,10 +23,10 @@ a:hover {
   outline: none; 
 }
 ::selection {
-  background: rgba(3,166,150, 1); !important;
+  background: rgba(3,166,150, 1) !important;
 }
 ::-moz-selection {
-  background: rgba(3,166,150, 1); !important;
+  background: rgba(3,166,150, 1) !important;
 }
 
 nav {
@@ -43,27 +42,6 @@ label {
   font-family: 'proxima-nova';
   font-weight: 700; text-transform:
   uppercase; font-size: 8pt;
-}
-
-input {
-  border: 2px solid #444444;
-  -webkit-box-shadow: inset 0 0 8px rgba(0,0,0,0.1), 0 0 16px rgba(0,0,0,0.1);
-  -moz-box-shadow: inset 0 0 8px  rgba(0,0,0,0.1), 0 0 16px rgba(0,0,0,0.1);
-  box-shadow: inset 0 0 8px  rgba(0,0,0,0.1), 0 0 16px rgba(0,0,0,0.1);
-  padding: 5px;
-  width: 100%;
-  font-size: 110%;
-  font-family: 'proxima-nova';
-}
-
-select {
-  width: 110%;
-  font-size: 100%;
-  font-family: 'proxima-nova';
-  background: transparent;
-  border: 0; 
-  text-transform: uppercase;
-  font-weight: 300;
 }
 
 #wrapper {
@@ -150,7 +128,14 @@ select {
   margin-top: 5px;
   font-size: 15px;
   overflow-y: scroll;
-  resize: none;}
+  resize: none;
+}
+
+#diff-status {
+  cursor: pointer;
+  background: rgba(3,166,150, 1);
+  color: rgba(255,255,255, 1);
+}
 
 #loading { 
   position: absolute; 

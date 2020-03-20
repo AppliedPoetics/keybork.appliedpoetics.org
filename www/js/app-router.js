@@ -6,15 +6,24 @@ $.fn.transmit = function() {
     data: this[0],
     dataType: 'text',
     success: function(data){
-      $(document).off('keypress');
       data = $.parseJSON(data);
+      $(document).off('keypress');
       $(document).keypress(function(key) {
         var code = key.which;
         if($.inArray(code,data.letters) !== -1) {
           return false;
         }
       });
-      $('#diff').text(data.diff);
+      if ( $('#diff-status').length ) {
+        $('#diff-status').text(data.diff);
+      } else {
+        $('#diff-level').append(
+          '<button id = "diff-status" class = "drop-btn">' + data.diff + '</button>',
+        );
+        $('#diff-status').on('click',function() {
+          // TODO: Create a modal?
+        });
+      }
     },
     error: function(xhr,ajaxOptions,thrownError){
         console.log(xhr.status + " " + xhr.responseText);
