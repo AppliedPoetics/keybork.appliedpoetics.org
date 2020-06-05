@@ -24,10 +24,23 @@ fn assess_difficulty(factor: String)
     diff
   }
 
+fn process_text(text: String, keys: Vec<u8>) 
+  -> String {
+    let chars: Vec<_> = text
+      .chars()
+      .map(|c| c as u8)
+      .collect();
+    let result: Vec<char> = chars
+      .map(|c| if !keys.contains(c){c as char})
+      .collect();
+    println!("{:?}",result);
+    text
+  }
+
 fn avail_keys(factor: String)
   -> Vec<u8> {
     let diff = assess_difficulty(factor);
-    let mut keys: Vec<u8> = (0..255)
+    let mut keys: Vec<u8> = (65..126)
       .map(|n| n)
       .collect();
     let limit = (keys.len() as f32 * diff).floor();
@@ -43,9 +56,10 @@ pub fn main()
   -> Result<(), std::io::Error> {
     let mut args = core::Task::init();
       args.args();
-    let text = core::read(args.file);
+    let mut text = core::read(args.file);
     let factor = &args.args[0];
     let keys = avail_keys(factor.to_string());
+    text = process_text(text, keys.to_owned());
     let response = Response {
         diff: factor.to_owned(),
         letters: keys.to_owned(),

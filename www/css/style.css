@@ -277,6 +277,7 @@ label {
 .modal-text {
   padding: 5%;
   text-justify: inter-word;
+  text-align: justify;
 }
 
 .modal-text p {
@@ -284,8 +285,12 @@ label {
   text-align: justify;
 }
 
+.modal-text a {
+  color: rgba(3, 166, 150, 1);
+}
+
 @media only screen and (max-width: 768px) {
   #menu {
-    min-height: 30vw;
+    min-height: 4vw;
   }
 }

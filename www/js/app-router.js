@@ -23,8 +23,10 @@ $.fn.transmit = function() {
       }
       $('#diff-modal .modal-text').text('');
       $(data.letters).each(function() {
-        var text = $('#diff-modal .modal-text').text();
-        $('#diff-modal .modal-text').text(text + ' ' + String.fromCharCode(this))
+        var text = $('#diff-modal .modal-text').html();
+        $('#diff-modal .modal-text').html(
+          text + ' ' + String.fromCharCode(this)
+        )
       });
       $('#diff-status').on('click',function() {
         $('#diff-modal').show();

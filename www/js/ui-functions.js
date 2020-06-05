@@ -1,8 +1,4 @@
 $(document).ready(function(){
-  $('#loading img').css(
-    {marginLeft: ($(document).width() - 101)/2 + "px", 
-     marginTop: ($(document).height()/2.5) +"px"}
-  );
   $('.dropdown').on('mouseenter',function() {
     $(this).css('background','rgba(3,166,150, 1)');
     $(this).css('color','rgba(255,255,255,1)');
@@ -14,8 +10,12 @@ $(document).ready(function(){
   $('.drop-btn').on('mouseenter',function() {
     $(this).siblings('.dropdown-content').css('display','');
   });
-  $('.modal-window').on('focusout',function() {
-    $(this).hide();
+  $('.modal-window').on('focusout',function(e) {
+    if(e.relatedTarget.tagName == 'A') {
+      // Do nothing!
+    } else {
+      $(this).hide();
+    }
   });
   $('.drop-btn').on('click', function() {
     var method = $(this).attr('data-method');
