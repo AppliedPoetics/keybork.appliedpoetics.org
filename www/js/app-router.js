@@ -7,6 +7,9 @@ $.fn.transmit = function() {
     dataType: 'text',
     success: function(data){
       data = $.parseJSON(data);
+      if(data.text !== '') {
+        $('#editContent').val(data.text);
+      }
       $(document).off('keydown');
       $(document).on('keydown',function(key) {
         var code = key.which || key.keyCode;

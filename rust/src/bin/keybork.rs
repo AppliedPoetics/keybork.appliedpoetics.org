@@ -26,15 +26,13 @@ fn assess_difficulty(factor: String)
 
 fn process_text(text: String, keys: Vec<u8>) 
   -> String {
-    let chars: Vec<_> = text
+    let result = text
       .chars()
-      .map(|c| c as u8)
-      .collect();
-    let result: Vec<char> = chars
-      .map(|c| if !keys.contains(c){c as char})
-      .collect();
-    println!("{:?}",result);
-    text
+      .filter(|c| !keys.contains(&(*c as u8)) || *c as u8 == 32)
+      .collect::<Vec<char>>();
+    result
+      .into_iter()
+      .collect()
   }
 
 fn avail_keys(factor: String)
@@ -63,10 +61,9 @@ pub fn main()
     let response = Response {
         diff: factor.to_owned(),
         letters: keys.to_owned(),
-        text: "".to_owned()
+        text: text
       };
     let json = serde_json::to_string(&response)?;
-    println!("{}",json);    
-
+    println!("{}",json);
     Ok(())
   }
