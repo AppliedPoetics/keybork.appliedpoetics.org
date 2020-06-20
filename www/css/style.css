@@ -97,6 +97,10 @@ label {
   font-weight: 600;
 }
 
+#mobile-menu {
+  display: none;
+}
+
 #console{
   height: 95%;
 }
@@ -148,6 +152,7 @@ label {
 }
 
 #loading img {
+  display: none;
   position: absolute;
 }
 
@@ -291,6 +296,22 @@ label {
 
 @media only screen and (max-width: 768px) {
   #menu {
-    min-height: 4vw;
+    display: none;
+  }
+
+  #mobile-menu {
+    display :block;
+    position: absolute;
+    top: 2%;
+    right :0%;
+  }
+  
+  #editContent {
+    height: 100vh !important;
+    width: 100vw !important;
+  }
+
+  #lineNumbers {
+    height: 100vh !important;
   }
 }

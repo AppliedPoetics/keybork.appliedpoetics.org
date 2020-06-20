@@ -7,13 +7,16 @@ $.fn.transmit = function() {
     dataType: 'text',
     success: function(data){
       data = $.parseJSON(data);
+      keys = $.map(data.letters, function(key) {
+         return String.fromCharCode(key);
+      });
       if(data.text !== '') {
         $('#editContent').val(data.text);
       }
       $(document).off('keydown');
       $(document).on('keydown',function(key) {
-        var code = key.which || key.keyCode;
-        if($.inArray(code,data.letters) !== -1) {
+        var code = key.key;
+        if($.inArray(code,keys) !== -1) {
           return false;
         }
       });
